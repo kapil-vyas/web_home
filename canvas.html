@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<canvas id="my_canvas"></canvas>
+	</body>
+	<script>
+		var canvas = null;
+		var context = null;
+		var img = null;
+
+		setup = function() {
+			canvas = document.getElementById('my_canvas');
+			context = canvas.getContext('2d');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			img = new Image();
+			img.onload = onImageLoad;
+			img.src = "pic.jpg";
+		};
+
+		onImageLoad = function() {
+			context.drawImage(img, 0, 0);
+		};
+
+		setup();
+	</script>
+</html>
